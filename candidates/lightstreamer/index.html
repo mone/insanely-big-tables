@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+
+    <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="../../index.css"/>
+
+    <title>Test with Lightstreamer</title>
+
+</head>
+
+<body>
+
+<div class="btn-group">
+    <button class="btn btn-default" onclick="ls.unshift()">Unshift</button>
+    <button class="btn btn-default" onclick="ls.push()">Push</button>
+    <button class="btn btn-default" onclick="ls.remove()">Remove</button>
+    <button class="btn btn-default" onclick="ls.clear()">Clear</button>
+</div>
+<div class="btn-group">
+    <button class="btn btn-success" onclick="ls.start()">Start</button>
+    <button class="btn btn-danger" onclick="ls.stop()">Stop</button>
+</div>
+
+<input type="text" class="form-control" id="rate" placeholder="rate, amount/second" />
+<input type="text" class="form-control" id="amount" placeholder="amount to add" />
+<input type="text" class="form-control" id="time" value="" placeholder="total time, sec" readonly="readonly" />
+<input type="text" class="form-control" id="length" value="" placeholder="total amount" readonly="readonly" />
+
+
+<table class="table table-condensed">
+    <thead>
+    <tr>
+        <th>Key</th>
+        <th>Value</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr id="content" data-source="lightstreamer">
+            <td data-source="lightstreamer" data-field="key"></td>
+            <td data-source="lightstreamer" data-field="value"></td>
+        </tr>
+    </tbody>
+</table>
+
+<script type="text/javascript" src="http://demos.lightstreamer.com/commons/require.js"></script>
+<script type="text/javascript" src="http://demos.lightstreamer.com/commons/lightstreamer_namespace.js"></script>
+<script type="text/javascript" src="../../utils.js"></script>
+<script type="text/javascript" src="index.js"></script>
+
+</body>
+</html>
